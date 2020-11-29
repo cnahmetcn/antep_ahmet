@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/hakkimda',[AboutController::class,'hakkimda']);
+Route::get('/urunler',[AboutController::class,'urunler']);
+Route::get('/satis',[AboutController::class,'satis']);
