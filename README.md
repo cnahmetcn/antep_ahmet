@@ -6,3 +6,10 @@ Bu proje Gaziantep Laravel Bootcamp için açılmış ve
  haftalık ödevlerin takip edildiği bir repodur. Diğer
  repolarım için <a href="https://github.com/cnahmetcn">
  github hesabıma </a> bakabilirsiniz. 
+
+ ### Son Güncellemeler (07/12/2020)
+
+ - Ogami Template Dosyaları Parçalandı
+ - Banner parçalandı
+ - Toprated, review ve latest ayrıldı
+ - Anasayfa da kategoriler eklendi ve veritabanına göre düzenlendi

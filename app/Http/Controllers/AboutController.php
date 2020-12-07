@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\UserImport;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AboutController extends Controller
 {
-    public function hakkimda()
+    public function kisiler()
     {
-        $users=DB::table('users')->get();
+       // $users=DB::table('users')->get();
+       $users=User::all();
        // $name=$users->name;
        // $job='Full Stack Developer (İşsiz)';
        // $city='Kayseri';
-        return view('hakkimda',compact('users'));
-    }
-
-    public function urunler()
-    {
-        $products=DB::table('products')->get();
-        return view('urunler',compact('products'));
+        return view('kisiler',compact('users'));
     }
 
     public function satis()
@@ -30,5 +28,31 @@ class AboutController extends Controller
             ->select('user_products.*','users.name as username', 'products.name as productname', 'products.price')
             ->get();
         return view('satis',compact('satis'));
+    }
+
+    public function create()
+    {
+        $kisiler=User::all();
+        return view('kisiekle',compact('kisiler'));
+    }
+
+    public function store(Request $request)
+    {
+        $name= $request->name;
+        $email= $request->email;
+        $password= $request->password;
+        User::create([
+            'name'=>$name,
+            'email'=>$email,
+            'password' => $password,
+
+        ]);
+        return back();
+    }
+
+    public function import()
+    {
+        Excel::import(new UserImport, request()->file('file'));
+        return back();
     }
 }
