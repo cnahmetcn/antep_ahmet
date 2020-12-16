@@ -20,7 +20,8 @@ class OganiController extends Controller
         $blogs=Blog::all();
         $products=Product::all();
         $categories=Category::all();
-        return view('ogani.index',compact('blogs','products','categories'));
+        $latest = Product::orderBy('created_at','desc')->take(3)->get();;
+        return view('ogani.index',compact('blogs','products','categories','latest'));
     }
 
     /**
@@ -87,5 +88,10 @@ class OganiController extends Controller
     public function destroy(Ogani $ogani)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductListExport,'product.xlsx');
     }
 }

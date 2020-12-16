@@ -13,7 +13,9 @@ class AboutController extends Controller
     public function kisiler()
     {
        // $users=DB::table('users')->get();
-       $users=User::all();
+       // $users=User::all(); // tüm kayıtları gösteirri
+       $users=User::paginate(5); // Tüm kayıtları gösterir ancak her sayfada 5 tane olacak şekilde
+        $user=User::all();
        // $name=$users->name;
        // $job='Full Stack Developer (İşsiz)';
        // $city='Kayseri';

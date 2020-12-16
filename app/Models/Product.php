@@ -18,6 +18,7 @@ class Product extends Model
         'photo',
         'created_by',
         'category_id',
+        'status'
     ];
 
     // İlişkili olduğu alanlar

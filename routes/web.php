@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\OganiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,5 +69,15 @@ Route::get('/ogani',[OganiController::class,'index']);
 
 Route::get('/create-blog',[BlogController::class,'create'])->name('blog.create');
 Route::post('/save-blog',[BlogController::class,'store'])->name('blog.save');
+
+/**
+ * Password İşlemleri
+ */
+
+Route::get('/forgotPassword',[PasswordController::class,'index'])->name('forgotPassword');
+Route::post('/sendPassword',[PasswordController::class,'sendPassword'])->name('sendPassword');
+
+
+
 
 

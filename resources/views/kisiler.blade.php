@@ -1,5 +1,5 @@
 @extends('dashboard')
-@section('title', 'Hakkımda')
+@section('title', 'Kişiler')
 @section('content')
 
 <div class="container">
@@ -17,11 +17,21 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->password}}</td>
+                <td>
+                <input type="password" id="pwd" value="{{$user->password}}" name="pswd">
+
+                <a href="{{route('forgotPassword')}}" class="btn btn-warning">Şifremi Unuttum</a>
+                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+        {!! $users->links() !!}
+    </div>
+
 </div>
+
+
 
 @endsection

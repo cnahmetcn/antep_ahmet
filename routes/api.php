@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostmanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * Postman
+ */
+Route::get('/api-products',[PostmanController::class,'products']);
+Route::get('/api-users',[PostmanController::class,'users']);
+Route::get('/api-categories',[PostmanController::class,'categories']);

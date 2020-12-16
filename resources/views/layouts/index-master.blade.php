@@ -82,8 +82,12 @@
                 </div>
                 @endforeach
             </div>
+            <div class="form-group">
+                <a class="btn btn-primary" href="{{route('product.export')}}">Ürünleri Dışarı Aktar</a>
+            </div>
         </div>
     </section>
+
     <!-- Featured Section End -->
 
     <!-- Banner Begin -->

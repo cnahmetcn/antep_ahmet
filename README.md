@@ -7,9 +7,6 @@ Bu proje Gaziantep Laravel Bootcamp için açılmış ve
  repolarım için <a href="https://github.com/cnahmetcn">
  github hesabıma </a> bakabilirsiniz. 
 
- ### Son Güncellemeler (07/12/2020)
+ ### Son Güncellemeler (16/12/2020)
 
- - Ogami Template Dosyaları Parçalandı
- - Banner parçalandı
- - Toprated, review ve latest ayrıldı
- - Anasayfa da kategoriler eklendi ve veritabanına göre düzenlendi
+ - Nexmo (Vonage) Apisi kullanarak sms gönderme işlemi yapıldı. 
